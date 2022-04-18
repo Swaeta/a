@@ -1,46 +1,88 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;800;900&family=Inter:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Sora:wght@700;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;800&display=swap');
-
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Mukta", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Mukta", sans-serif;
+    
+  }
   
-}
-html::-webkit-scrollbar{
-  scroll-behavior: smooth;
-  
+  body {
+    background: url(./assets/m.jpg);
+ 
+    justify-content: center;
+    align-items: center;
+    
+  }
+  html::-webkit-scrollbar{
+    scroll-behavior: smooth;
 
+  }
+  .book{
+    background-color: #fff;
+    width: auto ;
+    margin: 2rem 2rem;
+    padding: 1rem;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+
+  }
   
+ .inputs {
+   
+   height: 6rem;
+   cursor: pointer;
+   font-size: 20px;
+   margin: 5px 0;
+   padding: 2px 5px;
+   width: auto;
+   border: none;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ #date {
+  width: 15rem;
 }
-.main_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #000;
+#time {
+  width: 15rem;
+}
+
+.check {
+
+  border: none;
+  width: 15rem;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 5px 0;
+  cursor: pointer;
+  background: linear-gradient(320deg,#3f00e6,#7f00fd)!important;;
 }
 .nav {
-  position: absolute;
   top: 0;
   height: 4rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;
-  z-index: 99999;
-  padding: 0 1rem;
+  z-index: 99;
+  margin: 2rem 10px;
   font-size: 12px;
   font-weight: 700;
   color: rgb(220, 248, 255);
+  margin-top: 3rem;
 }
 
 p {
-  padding: 0 1rem;
   margin: 0 7px;
   text-align: center;
+  color: #fff;
 }
 
 .nav_link {
@@ -78,7 +120,12 @@ p {
   background: rgb(16, 140, 156);
   transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
+.content {
+ margin-top: 5rem;
+ font-size: 25px;
+ font-weight: 200;
+ 
+}
 .nav_link:hover {
   color: rgb(16, 140, 156);
 }
@@ -90,32 +137,50 @@ p {
 .nav_link:hover::after {
   left: 0;
 }
-.main_img {
-  position: relative;
-  background: url(./assets/m.jpg);
-  width: 100%;
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1;
-}
 
-.content {
+#click {
+  top: 105%;
+}
+#inner_nav {
   position: absolute;
-  z-index: 9999;
+  z-index: 99;
+  top: 32%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  align-items: center;
+  margin: 2rem 0.5rem;
+  cursor: pointer;
+  
+ }
+ #inner_nav img {
+   margin: 0.8rem 1rem;
+   width: 30px;
+ }
+ .head {
   text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  padding-top: 40px;
+}
+.eve_body {
   display: flex;
   flex-direction: column;
-  top: 10%;
-  bottom: 50%;
-  font-weight: 200;
-  font-size: 2.3rem;
-  color: rgb(224, 224, 224);
+  align-items: center;
+  background-color: #fff;
+  margin-top: 7rem;
+  width: auto;
+  padding: 0 20px;
 }
-.head_p {
-  font-size: 1rem;
-  font-family: "Epilogue";
+.eve_body img{
+  width: 23rem;
+ 
+}
+.event_images img {
+  width: 20rem;
 }
 .event_images {
   display: flex;
@@ -123,7 +188,8 @@ p {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  margin: 1.5rem 10rem;
+  margin: 1.5rem 0.5rem;
+
 }
 .event_images .card {
   position: relative;
@@ -159,289 +225,208 @@ p {
   visibility: visible;
   opacity: 1;
 }
-
-.eve_body {
-  display: flex;
-  flex-direction: column;
-  margin: 0.2rem 4rem;
-  text-align: center;
-  font-size: 25px;
-  color: rgb(17, 34, 59);
-}
-
-ul {
-  text-align: left;
-  list-style: square;
-  font-size: 18px;
-  margin: 2rem 0;
-  text-align: justify;
-}
-.fromto {
-  position: absolute;
-  z-index: 9999;
-  top: 30%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-@media (min-width: 768px) {
-  .nav {
-    font-size: 15px;
-  }
-  p {
-    margin: 0 1rem;
-  }
-  .eve_body {
-    margin: 2rem 7rem;
-    font-size: 28px;
-  }
-}
-
-
-
-@media (min-width: 1024px) {
-  .nav {
-    font-size: 17px;
-  }
-  p {
-    margin: 0 1rem;
-  }
-  .content {
-    top: 17%;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-  .head_p {
-    font-size: 1.3rem;
-  }
-  .eve_body {
-    margin: 2rem 9rem;
-    font-size: 28px;
-  }
-  ul {
-    text-align: left;
-    list-style: square;
-    font-size: 22px;
-    margin: 2rem 0;
-    text-align: justify;
-  }
-}
-
-@media (min-width: 1280px) {
-  .main_img {
-    width: 100%;
-    height: 70vh;
-    background-size: cover;
-    background-position: fixed;
-  }
-  .content {
-    font-size: 1rem;
-  }
-  p {
-    margin: 0 1rem;
-  }
-  .eve_body {
-    margin: 2rem 12rem;
-    font-size: 28px;
-    align-items: center;
-  }
-  ul {
-    font-size: 20px;
-    width: 60%;
-    
-  }
-
-}
-@media (min-width: 1536px) {
-  .main_img {
-    width: 100%;
-    height: 75vh;
-    background-size: cover;
-    background-position: fixed;
-  }
-  .content {
-     font-size: 2.2rem;
-     top: 12%; 
-     font-weight:100;
-     }
-  p {
-    margin: 0 1rem;
-  }
-  .eve_body {
-    margin: 2rem 17rem;
-    font-size: 28px;
-  }
+.spots {
+  margin: 1rem 0.1rem;
+ align-items: center;
  
-  .nav {
-    width: 97%;
-    top: 2%;
-    border-radius: 10px;
-    height: 3rem;
-     }
-     .fromto{
-       position: absolute;
-       z-index: 99;
-       background-color: #fff;
-       width: 70%;
-       height: 35%;
-       border-radius: 10px;
-       top: 32%;
-       cursor: pointer;
-     
-    
-     }
-     .inner_nav {
-      position: absolute;
-      z-index: 9999;
-      top: 26%;
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      background-color: #fff;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      border-radius: 10px;
-      align-items: center;
-      margin: 1rem 2rem;
-      cursor: pointer;
-      
-     }
-     .inner_nav img {
-       margin: 0.8rem 1.5rem;
-     }
-      
-   
-      .travel_no {
-       
-        margin: 1rem 0;
-        margin-left: 7rem;
-        margin-right: 2rem;
-        height: 2rem;
-        display: flex;
-      }
-     .travel_booking {
-       display: flex;   
-       align-items:flex-start;
-       text-align:  left;
-       margin-left: 7rem;
-       margin: 0 3.8rem;
-       height: 15rem;
-       cursor: pointer;       
-     }
-     .f{
-      width: 200px;
-      height: 180px;
-      color: rgb(0, 0, 0);
-      margin: 0.2rem 0.5rem;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      padding: 1rem;
-      font-size: 0.8rem;
-      font-weight: 100;
-     
-      top:10px;
-      text-align: center;
-      position: relative;
-    
-     }
-      
-     .f h6 {
-       font-size: 1rem;
-       font-weight: 300;
-       text-align: center;
-       cursor: pointer;
-       margin-bottom: 1.5rem;
-     }
-
-     .from {
-       border: none;
-       position: absolute;
-       width: 15rem;
-       height: 9rem;
-       text-align:center;
-       padding-bottom: 20%;
-       font-size: 40px;
-       left:0;
-       top: 18%;
-       background-color: none;
-       cursor: pointer;
-       
-     }
-
-     .from::placeholder {
-       color: #000;
-
-       
-     }
-     .to {
-      border: none;
-      position: absolute;
-      width: 16rem;
-      height: 9rem;
-   
-      text-align:center;
-      padding-bottom: 20%;
-      font-size: 40px;
-      left:1%;
-      top: 18%;
-      background-color: none;
-      cursor: pointer;
-     }
-     .to::placeholder{
-      color: #000;
-      cursor: pointer;
-     
-     }
-     .check {
-       border: none;
-       width: 15%;
-       height: 13%;
-       color: #fff;
-       font-size: 17px;
-       border-radius: 20px;
-       margin: 20px 36rem;
-       cursor: pointer;
-       background: linear-gradient(320deg,#3f00e6,#7f00fd)!important;;
-     }
-     .head {
-       text-align: center;
-       font-size: 40px;
-       font-weight: 300;
-       padding-top: 40px;
-     }
-      
-
-     .eve_body {
-       display: flex;
-       flex-direction: row;
-     }
-    
-     a {
-      text-decoration: none;
-      color: #000;
-     }
-   
-     .spots {
-       margin: 1rem 1rem;
-       margin-left: 20%;
-     }
-
-     .spots img {
-       margin: 2rem;
-       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-       border: solid 2px #fff;
-     }
-    footer {
-      display: flex;
-      flex-direction: column;     
-      justify-content: center;
-      padding-top: 2rem;
-      align-items: center;
-   
-     background: url(./assets/m.jpg);
-    }
-    footer img {
-      width: 40px;
-      margin: 1rem 2rem;
-    }
-
 }
+
+.spots img {
+  margin: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border: solid 2px #fff;
+}
+  @media (min-width: 768px){
+    .book{
+      width: auto ;
+      margin: 5rem 2rem;
+      padding: 2rem;
+      
+    }
+    
+   .inputs { 
+     height: 8rem;
+     cursor: pointer;
+     font-size: 25px;
+     margin: 5px 0;
+     padding: 2px 5px;
+     width: auto;
+     border: none;
+     border-radius: 10px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   } 
+    #date {
+      width: 18rem;
+    }
+    #time {
+      width: 18rem;
+    }
+   .division {
+     display: flex;
+     flex-direction: row;
+   }
+   .form-floating  {
+    margin: 0 7px;
+ 
+    
+  }
+  .nav_link {
+    margin: 2px 20px;
+  }
+  #click {
+    top: 100%;
+  }
+  #inner_nav {
+    top: 36%;
+   }
+   #inner_nav img {
+     margin: 0.8rem 1rem;
+     width: 40px;
+   }
+   .spots {
+    margin: 1rem 1rem;
+ 
+   
+  }
+  }
+  @media (min-width: 1024px){
+    .content {
+      margin-top: 5rem;
+      font-size: 27px;
+      
+     }
+     #head_line{
+       font-size: 3rem;
+     }
+     #click {
+      top: 105%;
+    }
+    #inner_nav {
+      top: 40%;
+     }
+     .eve_body {
+      display: flex;
+      flex-direction: row;
+  
+      margin: 7rem 0;
+      width: auto;
+      padding: 0 20px;
+    }
+    .eve_body img{
+      width: 45rem;
+      margin: 1rem 0;
+     
+    }
+    .spots {
+      margin: 1rem 11px;
+
+    }
+    
+    .spots img {
+      margin: 0.5rem;
+  
+    }
+  }
+  @media (min-width: 1280px){
+    .book{
+  
+      width: 95%;
+      margin: 5rem 2rem;
+      padding: 6rem 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+     
+    }
+    
+   .inputs {
+     height: 10rem;
+     font-size: 26px;
+     padding: 5px;
+  
+   }
+   #date {
+    width: auto;
+  }
+  #time {
+    width: auto;
+  }
+  #number {
+    width: 8rem;
+  }
+  #click {
+    top: 90%;
+  }
+  #inner_nav img {
+    margin: 0.8rem 1rem;
+    width: 50px;
+  }
+  .head {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    padding-top: 40px;
+  }
+  .eve_body li {
+    font-size: 20px;
+ 
+   justify-content: center;
+  
+  }
+  .eve_body {
+    padding:0  10rem;
+  }
+  .spots {
+    margin: 1rem 6rem;
+
+  }
+  
+  .spots img {
+    margin: 1rem;
+
+  }
+  }
+  @media (min-width: 1400px){
+    .inputs{
+      font-size: 30px;
+    }
+    .content {
+      margin-top: 5rem;
+      font-size: 25px;
+      font-weight: 200;
+      
+     }
+     #head_line{
+       font-size: 3.5rem;
+     }
+  
+  }
+  @media (min-width: 1536px){
+     
+   .book{
+  
+     width: auto;
+     margin: 5rem 12rem;
+     padding: 6rem 0;
+     display: flex;
+     flex-direction: row;
+    
+   }
+   
+  .inputs {
+    height: 10rem;
+    font-size: 24px;
+    padding: 5px;
+ 
+  }
+
+  .form-floating  {
+   margin: 0 10px;
+
+   
+ }
+
+
+  }  
+
