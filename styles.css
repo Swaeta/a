@@ -441,10 +441,11 @@ p {
 
   .form-floating  {
    margin: 0 10px;
-
+ 
    
  }
-
+.spots {
+    margin-left:10rem;
 
   }  
 
