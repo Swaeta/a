@@ -13,8 +13,8 @@
       justify-content: center;
       padding-top: 2rem;
       align-items: center;
-   
-     background: url(./assets/m.jpg);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: #0b0224;
     }
     footer img {
       width: 40px;
@@ -239,15 +239,13 @@ p {
   opacity: 1;
 }
 
-.head {
-    background-color:#fff;
-    width:100%
-}
+
 .spots {
   margin: 1rem 0.1rem;
- align-items: center;
-      background-color:#fff;
-    width:100%
+   align-items: center;
+ display: inline-block;
+ justify-content: center;
+
  
 }
 
