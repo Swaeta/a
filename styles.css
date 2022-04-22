@@ -238,9 +238,16 @@ p {
   visibility: visible;
   opacity: 1;
 }
+
+.head {
+    background-color:#fff;
+    width:100%
+}
 .spots {
   margin: 1rem 0.1rem;
  align-items: center;
+      background-color:#fff;
+    width:100%
  
 }
 
