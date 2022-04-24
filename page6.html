@@ -51,51 +51,165 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        background-color: rgb(16, 3, 46);
       }
-
       #map {
         position: absolute;
+        z-index: 0;
         top: 0;
+        bottom: 0;
+        right: 0;
         left: 0;
+        margin: 0 2rem;
+        margin-top: 8rem;
+        margin-bottom: 1rem;
+      }
+      .nav {
+        top: 0;
+        height: 4rem;
         width: 100%;
-        height: 100%;
+        display: flex;
+        z-index: 99;
+        margin: 2rem 10px;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgb(220, 248, 255);
+        margin-top: 2rem;
       }
 
-      #map {
+      .nav_link {
+        display: flex;
+        font-weight: 300;
+        font-size: 17px;
+        color: rgb(229, 234, 236);
         position: relative;
-        margin: 2rem;
-        margin-top: 0;
-        width: auto;
+        padding: 5px 0;
+        overflow: hidden;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.3s;
+        cursor: pointer;
+        margin: 0.5rem 2rem;
+      }
+
+      .nav_link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 100%;
+        width: 50%;
+        height: 2px;
+        background: rgb(16, 140, 156);
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .nav_link::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 50%;
+        height: 2px;
+        background: rgb(16, 140, 156);
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .nav_link:hover {
+        color: rgb(16, 140, 156);
+      }
+
+      .nav_link:hover::before {
+        right: 0;
+      }
+
+      .nav_link:hover::after {
+        left: 0;
+      }
+      .sidebar {
         height: 100%;
-        left: 0%;
-        top: 0%;
-        z-index: -2;
+        width: 0;
+        position: fixed;
+        z-index: 15;
+        top: 0;
+        left: 0;
+        background-color: rgb(16, 3, 46);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
       }
-      .toggle {
-        position: relative;
-        margin-top: 0;
-        margin-left: 3rem;
-        right: -20%;
-        top: 10%;
-        width: 50px;
-        height: 50px;
-        background: url(./icons/menu.png);
-        background-repeat: no-repeat;
-        background-size: 50px;
-        background-position: center;
-        cursor: pointer;
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
       }
-      .toggle.active {
-        background: url(./icons/menu.png);
-        background-repeat: no-repeat;
-        background-size: 60px;
-        background-position: center;
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
         cursor: pointer;
+        background-color: rgb(16, 3, 46);
+        color: none;
+        padding: 1px 15px;
+        border: none;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 16px;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidebar {
+          padding-top: 15px;
+        }
+        .sidebar a {
+          font-size: 18px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="toggle"></div>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">
+        <img src="./icons/menu.png" alt="a" style="width: 50px" />
+      </button>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
     <div
       class="folium-map leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag"
       id="map"
